@@ -1,5 +1,5 @@
 .container {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 body {
@@ -7,9 +7,11 @@ body {
     font-size: 16px;
     line-height: 1;
   }
+
+
   
-  .textarea{
-    background: transparent;
+  #textArea{
+    background: lightgray;
     border: none;
     resize: none;
     color: green;

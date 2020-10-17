@@ -2,34 +2,127 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"/> 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src='planner.js'></script>
+    <link rel="stylesheet" href="style.css">
 
+
+    <title>
+        Work Day Scheduler
+    </title>
 </head>
 
 <body>
+
     <header class="jumbotron">
-        <h1 class="display-3">Schedule Your Day</h1>
-        <p class="lead">All in a DAY's Work</p>
-        <p id="currentDay" class="lead"></p>
+        <h1 class="display-3">Work Day Scheduler</h1>
+        <h2>All in a DAY's Work</h2>
+        <p class="lead" id="currentDay">Date</p>
     </header>
+
     <div class="container">
         <!-- Timeblocks go here -->
+        <div class="row" id="nineAM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">9:00 AM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput9">
+                <textarea cols="80" id ="textArea" id="textareaNine" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnNine" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="tenAM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">10:00 AM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput10">
+                <textarea cols="80" id ="textArea" id="textareaTen" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnTen" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="elevenAM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">11:00 AM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput11">
+                <textarea cols="80" id ="textArea"  id="textareaEleven" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnEleven" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="twelvePM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">12:00 PM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput12">
+                <textarea cols="80" id ="textArea"  id="textareaTwelve" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnTwelve" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="onePM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">1:00 PM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput1">
+                <textarea cols="80" id ="textArea"  id="textareaOne" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnOne" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="twoPM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">2:00 PM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput2">
+                <textarea cols="80" id ="textArea"  id="textareaTwo" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnTwo" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="threePM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">3:00 PM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput3">
+                <textarea cols="80" id ="textArea"  id="textareaThree" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnThree" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="fourPM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">4:00 PM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput4">
+                <textarea cols="80" id ="textArea"  id="textareaFour" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnFour" type="button"></button>
+            </div>
+        </div>
+        <div class="row" id="fivePM">
+            <div class="column .col-lg-2" id="hour">
+                <div id="hourOfDay">5:00 PM</div>
+            </div>
+            <div class="column .col-lg-8" id="userInput5">
+                <textarea cols="80" id ="textArea"  id="textareaFive" rows="2"></textarea>
+            </div>
+            <div class="column .col-lg-2" id="saveTheDate">
+                <button class="saveBtn" id="saveBtnFive" type="button"></button>
+            </div>
+        </div>
+
     </div>
-
-
-
-
 </body>
 
 </html>
