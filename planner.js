@@ -11,14 +11,14 @@ $(document).ready(function () {
     };
     var i = 0;
 
-    $("#currentDay").text(moment().format("dddd[,] MMMM Do"));
+    $("#currentDay").text(moment().format('dddd') + ", " + moment().format('LL'));
 
     // Loop for adding AM hours to .container
     for (var i = 0; i < hours.amHours.length; i++) {
         var newRow = $(`<div class='row'></div>`);
         $('.container').append(newRow);
         var hrCol = $(`<div class='col-1 time-block'>${hours.amHours[i]}AM</div>`);
-        var textCol = $(`<textarea class="col-10" data-time=${colorChangeObject.amColorHours[i]}>Enter your notes here...</textarea>`);
+        var textCol = $(`<textarea class="col-10" data-time=${colorChangeObject.amColorHours[i]}></textarea>`);
         var buttonCol = $('<button class="col-1 saveBtn">Save</button>');
         $(newRow).append(hrCol, textCol, buttonCol);
     }
@@ -28,7 +28,7 @@ $(document).ready(function () {
         var newRow = $(`<div class='row'></div>`);
         $('.container').append(newRow);
         var hrCol = $(`<div class='col-1 time-block'>${hours.pmHours[i]}PM</div>`);
-        var textCol = $(`<textarea class="col-10" data-time=${colorChangeObject.pmColorHours[i]}>Enter your notes here...</textarea>`);
+        var textCol = $(`<textarea class="col-10" data-time=${colorChangeObject.pmColorHours[i]}></textarea>`);
         var buttonCol = $('<button class="col-1 saveBtn">Save</button>');
         $(newRow).append(hrCol, textCol, buttonCol);
     }
