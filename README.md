@@ -8,3 +8,11 @@ Research and tutorials are important pieces to finish this homework especially w
 Waiting for tutorial to get help in finishing the homework - Tutor help me use the jquery functions instead of hardcoding the creation of divs columns and buttons and making my code DRY.
 Advised by tutor that I only need moment.js code linked to my html and no need to create a lib folder because it is doing the same thing
 I can now feel that I have improvements on this bootcamp even if I am still behind but still working hard to follow and grasp learnings each class and week
+
+
+
+
+
+
+
+<img src="image/image.planner.JPG" alt="planner>

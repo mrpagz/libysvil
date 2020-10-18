@@ -1,4 +1,3 @@
-// var _Container = document.getElementById('timeDivs')
 
 // Adding time to the planner
 $(document).ready(function () {
@@ -7,65 +6,51 @@ $(document).ready(function () {
     
 });
 
-
 var Container = $(".container")
 var currentHour = parseInt(moment().format("H"))
 var schedule = JSON.parse(localStorage.getItem("schedule")) || {}
 var start_hour = 8;
 var end_hour = 17;
 
+// loop to every hour on the planner
 for (var i = start_hour; i <= end_hour; i++) {
     Row(i)
 }
-
+// displays the color of text area to determine if task is in the past, current or the future time
 function Row(hour) {
     var time = moment(hour, "H")
     var display = time.format("hA")
     var timeclass = "past";
-
+// 
     if (hour === currentHour) {
         timeclass = "present"
     } else if (currentHour < hour) {
         timeclass = "future"
-    }
+    }  
 
-    // var _parent = document.createElement('div')
-    // _parent.classList.add('time-block', 'row');   
+    // creating div and class (I previously hardcoded this in html)
     var parent = $("<div>")
         .addClass('time-block row')
 
-    // var _hourEl = document.createElement('div')
-    // _hourEl.classList.add('col-1', 'hour')
-    // _hourEl.textContent = display
+    // creating div, class and column (I previously hardcoded this in html)
     var hourEl = $("<div>")
         .addClass('col-1 hour')
         .text(display)
 
-    // var _textarea = document.createElement('textarea')
-    // _textarea.classList.add('col-10', 'description', timeclass)
-    // _textarea.value = schedule[display]
+    // creating div and class (I previously hardcoded this in html)
     var textarea = $('<textarea>')
         .addClass('col-10 description')
         .addClass(timeclass)
         .val(schedule[display])
 
-    // var _saveBtn = document.createElement('button')
-    // _saveBtn.classList.add('col-1', 'saveBtn')
-    // _saveBtn.addEventListener('click', clickBtn)
+    // creating div and class (I previously hardcoded this in html)
     var saveBtn = $("<button>")
         .addClass('col-1 saveBtn')
         .click(clickBtn)
-
-    // var _i = document.createElement('i')
-    // _i.classList.add('fas', 'fa-save')
+    // adding the save icon on the button with a link added in html
     var icon = $("<i>")
         .addClass('fas fa-save')
 
-    // _saveBtn.appendChild(_i)
-    // _parent.appendChild(_hourEl)
-    // _parent.appendChild(_textarea)
-    // _parent.appendChild(_saveBtn)
-    // _Container.appendChild(_parent)
     saveBtn.append(icon)
     parent.append(hourEl, textarea, saveBtn)
     Container.append(parent)
@@ -75,30 +60,17 @@ function clickBtn() {
     var parent = $(this).parent()
     var hour = parent.find('.hour').text()
     var text = parent.find('.description').val()
-
+// storing item in local storage
     schedule[hour] = text;
     localStorage.setItem('schedule', JSON.stringify(schedule))
 }
 
-// var arr = [0, 1, 2, 3]
-// var obj = {
-//     a: "A",
-//     b: "B",
-//     c: "C",
-// }
+// Comment out the code below I used as event listener on every hour after my tutor
 
-// obj.d = "D"
-// obj['e'] = "E"
-
-// var i = 3
-
-// console.log(arr)
-// console.log(arr[2])
-// console.log(arr[i])
-// console.log(obj)
-// console.log(obj.b)
-// console.log(obj['c'])
-
-// var key = 'name'
-// console.log(obj[key])
+// $("#saveBtnTen").click(function () {
+//     var taskTimeSlot = "#textareaTen #textareaEleven #textareaTwelve and so on ";
+//     var taskDetails = document.getElementById('textareaTen').value;
+//     bookAppointment(taskTimeSlot, taskDetails);
+//     writeToSchedule();
+// });
 
