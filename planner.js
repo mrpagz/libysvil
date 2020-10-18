@@ -3,18 +3,16 @@ $(document).ready(function () {
     writeToSchedule();
     
 });
-
+// event listener when save button is clicked
 $("#saveBtnNine").click(function () {
-    //console.log("user clicked to save 9am appointment");
     var appointmentTimeSlot = "#textareaNine";
     var appointmentDetails = document.getElementById('textareaNine').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
     writeToSchedule();
-    console.log(appointmentTimeSlot); // THis works pretty well
+    // console.log(writeToSchedule); 
 });
 
 $("#saveBtnTen").click(function () {
-    //console.log("user clicked to save 10am appointment");
     var appointmentTimeSlot = "#textareaTen";
     var appointmentDetails = document.getElementById('textareaTen').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -22,7 +20,6 @@ $("#saveBtnTen").click(function () {
 });
 
 $("#saveBtnEleven").click(function () {
-    //console.log("user clicked to save 11am appointment");
     var appointmentTimeSlot = "#textareaEleven";
     var appointmentDetails = document.getElementById('textareaEleven').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -30,7 +27,6 @@ $("#saveBtnEleven").click(function () {
 });
 
 $("#saveBtnTwelve").click(function () {
-    //console.log("user clicked to save 12pm appointment");
     var appointmentTimeSlot = "#textareaTwelve";
     var appointmentDetails = document.getElementById('textareaTwelve').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -38,7 +34,6 @@ $("#saveBtnTwelve").click(function () {
 });
 
 $("#saveBtnOne").click(function () {
-    //console.log("user clicked to save 1pm appointment");
     var appointmentTimeSlot = "#textareaOne";
     var appointmentDetails = document.getElementById('textareaOne').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -46,7 +41,6 @@ $("#saveBtnOne").click(function () {
 });
 
 $("#saveBtnTwo").click(function () {
-    //console.log("user clicked to save 2pm appointment");
     var appointmentTimeSlot = "#textareaTwo";
     var appointmentDetails = document.getElementById('textareaTwo').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -54,7 +48,6 @@ $("#saveBtnTwo").click(function () {
 });
 
 $("#saveBtnThree").click(function () {
-    //console.log("user clicked to save 3pm appointment");
     var appointmentTimeSlot = "#textareaThree";
     var appointmentDetails = document.getElementById('textareaThree').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -62,7 +55,6 @@ $("#saveBtnThree").click(function () {
 });
 
 $("#saveBtnFour").click(function () {
-    //console.log("user clicked to save 4pm appointment");
     var appointmentTimeSlot = "#textareaFour";
     var appointmentDetails = document.getElementById('textareaFour').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
@@ -70,9 +62,49 @@ $("#saveBtnFour").click(function () {
 });
 
 $("#saveBtnFive").click(function () {
-    //console.log("user clicked to save 5pm appointment");
     var appointmentTimeSlot = "#textareaFive";
     var appointmentDetails = document.getElementById('textareaFive').value;
     bookAppointment(appointmentTimeSlot, appointmentDetails);
     writeToSchedule();
 });
+
+// This function takes the new appointment and adds to schedule array.
+function bookAppointment(time, details) {
+
+    const newAppointment = { // an appointment object - using const unlike variable this does not change
+        time: time, // Time of appointment
+        title: details // Details from appointmenmt text area
+    }
+  
+    // Create array to store task details
+    scheduleArray = JSON.parse(localStorage.getItem("scheduleArray")) || [];
+    
+
+    // Remove any appointments previosly scheduled at the same time as new appointment.
+    scheduleArray = scheduleArray.filter(appointment => appointment.time !== newAppointment.time);
+    
+
+    // add new appointment to Schedule Array
+    scheduleArray.push(newAppointment);
+  
+
+    // Update local storage with revised task details
+    localStorage.setItem('scheduleArray', JSON.stringify(scheduleArray));
+    
+}
+
+// Declare function
+function writeToSchedule() {
+    // retrieving data stored in local storage (needs detailed explaination with tutor)
+    scheduleArray = JSON.parse(localStorage.getItem("scheduleArray")) || [];
+    // Use .map to sort out time and details from the Schedule Array
+    scheduleArray.map(newAppointment => {
+        //console.log("Writing to schedule")
+        if (newAppointment.title != 0) {
+
+            $(newAppointment.time).html(newAppointment.title);
+        }
+        console.log("The new appointment: " + newAppointment.title + " is at ... " + newAppointment.time);
+    });
+}
+// HEEEEEELLLLLLLLLLPPPPPP!!
