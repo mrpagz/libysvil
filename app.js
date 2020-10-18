@@ -18,7 +18,7 @@ var end_hour = 17;
 for (var i = start_hour; i <= end_hour; i++) {
     Row(i)
 }
-// displays the color of text area to determine if task is in the past, current or the future time
+// displays the color of text area to determine if task is in the past, current or the future hour-
 function Row(hour) {
     var time = moment(hour, "H")
     var display = time.format("hA")
