@@ -5,66 +5,66 @@ $(document).ready(function () {
 });
 // event listener when save button is clicked
 $("#saveBtnNine").click(function () {
-    var appointmentTimeSlot = "#textareaNine";
-    var appointmentDetails = document.getElementById('textareaNine').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaNine";
+    var taskDetails = document.getElementById('textareaNine').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
     // console.log(writeToSchedule); 
 });
 
 $("#saveBtnTen").click(function () {
-    var appointmentTimeSlot = "#textareaTen";
-    var appointmentDetails = document.getElementById('textareaTen').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaTen";
+    var taskDetails = document.getElementById('textareaTen').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
 $("#saveBtnEleven").click(function () {
-    var appointmentTimeSlot = "#textareaEleven";
-    var appointmentDetails = document.getElementById('textareaEleven').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaEleven";
+    var taskDetails = document.getElementById('textareaEleven').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
 $("#saveBtnTwelve").click(function () {
-    var appointmentTimeSlot = "#textareaTwelve";
-    var appointmentDetails = document.getElementById('textareaTwelve').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaTwelve";
+    var taskDetails = document.getElementById('textareaTwelve').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
 $("#saveBtnOne").click(function () {
-    var appointmentTimeSlot = "#textareaOne";
-    var appointmentDetails = document.getElementById('textareaOne').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaOne";
+    var taskDetails = document.getElementById('textareaOne').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
 $("#saveBtnTwo").click(function () {
-    var appointmentTimeSlot = "#textareaTwo";
-    var appointmentDetails = document.getElementById('textareaTwo').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaTwo";
+    var taskDetails = document.getElementById('textareaTwo').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
 $("#saveBtnThree").click(function () {
-    var appointmentTimeSlot = "#textareaThree";
-    var appointmentDetails = document.getElementById('textareaThree').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaThree";
+    var taskDetails = document.getElementById('textareaThree').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
 $("#saveBtnFour").click(function () {
-    var appointmentTimeSlot = "#textareaFour";
-    var appointmentDetails = document.getElementById('textareaFour').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaFour";
+    var taskDetails = document.getElementById('textareaFour').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
 $("#saveBtnFive").click(function () {
-    var appointmentTimeSlot = "#textareaFive";
-    var appointmentDetails = document.getElementById('textareaFive').value;
-    bookAppointment(appointmentTimeSlot, appointmentDetails);
+    var taskTimeSlot = "#textareaFive";
+    var taskDetails = document.getElementById('textareaFive').value;
+    bookAppointment(taskTimeSlot, taskDetails);
     writeToSchedule();
 });
 
