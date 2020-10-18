@@ -107,4 +107,4 @@ function writeToSchedule() {
         console.log("The new appointment: " + newAppointment.title + " is at ... " + newAppointment.time);
     });
 }
-// HEEEEEELLLLLLLLLLPPPPPP!!
+// HEEEEEELLLLLLLLLLPPPPPP!! I dont know how to make changes on the change of color when task has passed
