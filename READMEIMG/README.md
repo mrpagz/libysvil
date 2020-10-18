@@ -15,4 +15,4 @@ I can now feel that I have improvements on this bootcamp even if I am still behi
 
 
 
-<img src="image/image.planner.JPG" alt="planner>
+<img src="image/image.planner.JPG" alt="planner">
