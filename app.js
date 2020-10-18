@@ -1,9 +1,11 @@
+// I have hardcoded most of the creation of divs and col in html but changed it to a DRY code after what tutor recommended and ask me to work on
+// Tutor help me understand more on Jquery and applied it below
+
 
 // Adding time to the planner
 $(document).ready(function () {
     $("#currentDay").text(moment().format('LLLL'));
     writeToSchedule();
-    
 });
 
 var Container = $(".container")
