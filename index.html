@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- added link advised by tutor for the save-buton icom -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <link href="_style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
@@ -23,8 +26,17 @@
         <!--Time is inserted  in currentDay below-->
         <p class="lead" id="currentDay"></p>
     </header>
-    <div class="container">
-        <!-- Created rows columns and buttons on each hour -->
+    <div class="container" id="timeDivs">
+
+<!-- comment out the hardcoded items below which I did many times for each hour -->
+        <!-- <div class="time-block row">
+            <div class="hour col-1">9AM</div>
+            <textarea class="description col-10"></textarea>
+            <button class="saveBtn col-1">
+                <i class="fas fa-save"></i>
+            </button>
+        </div> -->
+<!-- 
         <div class="row" id="nineAM">
             <div class="column .col-lg-2" id="hour">
                 <div id="hourOfDay">9:00 AM</div>
@@ -35,119 +47,20 @@
             <div class="column .col-lg-2" id="saveTheDate">
                 <button class="saveBtn" id="saveBtnNine" type="button"></button>
             </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="tenAM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">10:00 AM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput10">
-                <textarea cols="50" id="textareaTen" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnTen" type="button"></button>
-            </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="elevenAM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">11:00 AM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput11">
-                <textarea cols="50" id="textareaEleven" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnEleven" type="button"></button>
-            </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="twelvePM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">12:00 PM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput12">
-                <textarea cols="50" id="textareaTwelve" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnTwelve" type="button"></button>
-            </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="onePM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">1:00 PM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput1">
-                <textarea cols="50" id="textareaOne" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnOne" type="button"></button>
-            </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="twoPM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">2:00 PM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput2">
-                <textarea cols="50" id="textareaTwo" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnTwo" type="button"></button>
-            </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="threePM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">3:00 PM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput3">
-                <textarea cols="50" id="textareaThree" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnThree" type="button"></button>
-            </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="fourPM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">4:00 PM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput4">
-                <textarea cols="50" id="textareaFour" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnFour" type="button"></button>
-            </div>
-        </div>
-        <!-- Created rows columns and buttons on each hour -->
-        <div class="row" id="fivePM">
-            <div class="column .col-lg-2" id="hour">
-                <div id="hourOfDay">5:00 PM</div>
-            </div>
-            <div class="column .col-lg-8" id="userInput5">
-                <textarea cols="50" id="textareaFive" rows="4"></textarea>
-            </div>
-            <div class="column .col-lg-2" id="saveTheDate">
-                <button class="saveBtn" id="saveBtnFive" type="button"></button>
-            </div>
-        </div>
+        </div> -->
+       
+        
 
     </div>
 </body>
 
-</html>
-</div>
-</body>
+</html></div></body>
 
 </html>
 </div>
 <!-- link moment.js file downloaded in momentjs.com -->
 <script src="moment.js"></script>
-<!-- Main JS -->
-<script src="planner.js"></script>
-<!-- downloaded from momentjs.com and linked per instruction -->
-<script src="lib/moment/moment.min.js"></script>
+<!-- Main Javascript -->
+<script src="./app.js"></script>
 </body>
-
 </html>
