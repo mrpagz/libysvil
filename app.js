@@ -5,7 +5,6 @@
 // Adding time to the planner
 $(document).ready(function () {
     $("#currentDay").text(moment().format('LLLL'));
-    writeToSchedule();
 });
 
 var Container = $(".container")
